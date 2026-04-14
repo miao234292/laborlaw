@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>环节一：求职与入职 - 劳动法课程</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">⚖️</span>
+                <span class="logo-text"><a href="index.html">劳动法课堂</a></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">首页</a></li>
+                <li><a href="section1.html" class="nav-link active">环节一</a></li>
+                <li><a href="section2.html" class="nav-link">环节二</a></li>
+                <li><a href="section3.html" class="nav-link">环节三</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 环节一 -->
+    <section id="section1" class="section section-one" style="padding-top: 100px;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">环节一</span>
+                <h2 class="section-title">求职与入职——打造你的"公平通行证"</h2>
+            </div>
+            
+            <div class="section-intro">
+                <p>求职是踏入职场的第一步。在挑选"理想工作"时，我们可能会遇到各种各样的招聘信息。如何辨别它们，避免潜在的法律风险，是每一位准劳动者的必修课。</p>
+            </div>
+
+            <div class="activity-container">
+                <h3 class="activity-title">🎯 招聘启事辨真伪</h3>
+                <p class="activity-desc">点击下方的招聘启事，查看完整内容，并思考讨论问题</p>
+
+                <div class="job-cards-grid" id="jobCards">
+                    <!-- 由 JavaScript 动态生成 -->
+                </div>
+
+                <!-- 招聘启事详情弹窗 -->
+                <div class="job-modal" id="jobModal">
+                    <div class="modal-content">
+                        <span class="modal-close">&times;</span>
+                        <div class="modal-body" id="jobDetail">
+                            <!-- 动态内容 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-summary">
+                <div class="summary-box">
+                    <p>好的开始是成功的一半。<strong>平等就业</strong>是我们的权利，而<strong>劳动合同</strong>则是我们入职的"通行证"，它的签订意味着我们正式受到劳动法的保护。</p>
+                </div>
+            </div>
+
+            <div class="section-nav">
+                <a href="index.html" class="nav-prev">← 返回首页</a>
+                <a href="section2.html" class="nav-next">进入环节二 →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>劳动法课程教学资源 | 仅供教学使用</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

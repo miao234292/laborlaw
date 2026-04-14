@@ -13,14 +13,13 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <span class="logo-icon">⚖️</span>
-                <span class="logo-text">劳动法课堂</span>
+                <span class="logo-text"><a href="index.html">劳动法课堂</a></span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#intro" class="nav-link">导入</a></li>
-                <li><a href="#section1" class="nav-link">环节一</a></li>
-                <li><a href="#section2" class="nav-link">环节二</a></li>
-                <li><a href="#section3" class="nav-link">环节三</a></li>
-                <li><a href="#summary" class="nav-link">总结</a></li>
+                <li><a href="index.html" class="nav-link active">首页</a></li>
+                <li><a href="section1.html" class="nav-link">环节一</a></li>
+                <li><a href="section2.html" class="nav-link">环节二</a></li>
+                <li><a href="section3.html" class="nav-link">环节三</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -38,11 +37,29 @@
             <div class="hero-message">
                 <p>知法、用法、守法：劳动法是劳动者的<span class="highlight">"护身符"</span>，也是职场的<span class="highlight">"通行证"</span>。</p>
             </div>
-            <a href="#intro" class="cta-button">开始学习</a>
-            <div class="hero-quick-nav">
-                <a href="#section1" class="quick-nav-link">环节一</a>
-                <a href="#section2" class="quick-nav-link">环节二</a>
-                <a href="#section3" class="quick-nav-link">环节三</a>
+            
+            <!-- 三个环节导航 -->
+            <div class="sections-nav">
+                <a href="section1.html" class="section-nav-card">
+                    <span class="section-nav-badge">环节一</span>
+                    <h3>求职与入职</h3>
+                    <p>打造你的"公平通行证"</p>
+                    <span class="section-nav-arrow">→</span>
+                </a>
+                
+                <a href="section2.html" class="section-nav-card">
+                    <span class="section-nav-badge">环节二</span>
+                    <h3>工作进行时</h3>
+                    <p>解锁你的"权利宝箱"</p>
+                    <span class="section-nav-arrow">→</span>
+                </a>
+                
+                <a href="section3.html" class="section-nav-card">
+                    <span class="section-nav-badge">环节三</span>
+                    <h3>离职与维权</h3>
+                    <p>铸造你的"法律盾牌"</p>
+                    <span class="section-nav-arrow">→</span>
+                </a>
             </div>
         </div>
         <div class="hero-decoration">
@@ -53,352 +70,6 @@
         </div>
     </header>
 
-    <!-- 导入部分 -->
-    <section id="intro" class="section intro-section">
-        <div class="container">
-            <h2 class="section-title">未来畅想与现实挑战</h2>
-            
-            <div class="intro-content">
-                <div class="intro-text">
-                    <p class="lead-text">亲爱的同学们，你是否曾想象过自己的第一份工作？是怎样的行业？怎样的职位？在憧憬未来的同时，你是否也曾有过一丝担忧？如果遇到不公平待遇，我们该怎么办？</p>
-                </div>
-
-                <div class="intro-visual">
-                    <div class="visual-card dream">
-                        <div class="visual-icon">✨</div>
-                        <h3>美好职场</h3>
-                        <p>充满活力、和谐的工作环境</p>
-                        <div class="dream-items">
-                            <span>💰 合理薪酬</span>
-                            <span>🏖️ 带薪休假</span>
-                            <span>📈 职业发展</span>
-                        </div>
-                    </div>
-                    <div class="vs-divider">VS</div>
-                    <div class="visual-card challenges">
-                        <div class="visual-icon">⚠️</div>
-                        <h3>职场挑战</h3>
-                        <div class="challenge-items">
-                            <div class="challenge-item" data-challenge="nopay">
-                                <span class="challenge-icon">😢</span>
-                                <span>不发工资怎么办？</span>
-                            </div>
-                            <div class="challenge-item" data-challenge="fired">
-                                <span class="challenge-icon">❓</span>
-                                <span>被无故开除怎么办？</span>
-                            </div>
-                            <div class="challenge-item" data-challenge="overtime">
-                                <span class="challenge-icon">😫</span>
-                                <span>被迫加班怎么办？</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="challenge-popup" id="challengePopup">
-                    <div class="popup-content">
-                        <span class="popup-close">&times;</span>
-                        <div class="popup-text"></div>
-                    </div>
-                </div>
-
-                <div class="intro-conclusion">
-                    <div class="conclusion-box">
-                        <p>面对这些挑战，我们不能束手无策。国家专门为我们劳动者制定了一部法律——<strong>《劳动法》</strong>，它就是我们的职场"护身符"。今天，我们就来揭开它的神秘面纱，看看它如何守护我们的职业生涯。</p>
-                    </div>
-                </div>
-
-                <div class="section-nav">
-                    <a href="#section1" class="nav-next">进入环节一：求职与入职 →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 环节一 -->
-    <section id="section1" class="section section-one">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">环节一</span>
-                <h2 class="section-title">求职与入职——打造你的"公平通行证"</h2>
-            </div>
-            
-            <div class="section-intro">
-                <p>求职是踏入职场的第一步。在挑选"理想工作"时，我们可能会遇到各种各样的招聘信息。如何辨别它们，避免潜在的法律风险，是每一位准劳动者的必修课。</p>
-            </div>
-
-            <div class="activity-container">
-                <h3 class="activity-title">🎯 招聘启事辨真伪</h3>
-                <p class="activity-desc">点击下方的招聘启事，查看完整内容，并思考讨论问题</p>
-
-                <div class="job-cards-grid">
-                    <!-- 招聘启事一 -->
-                    <div class="job-card" data-job="1">
-                        <div class="job-card-header">
-                            <div class="company-icon">🏢</div>
-                            <div class="company-info">
-                                <h4>腾飞科技股份有限公司</h4>
-                                <span class="job-position">高级行政助理</span>
-                            </div>
-                        </div>
-                        <div class="job-card-preview">
-                            <span class="preview-tag">点击查看详情</span>
-                        </div>
-                    </div>
-
-                    <!-- 招聘启事二 -->
-                    <div class="job-card" data-job="2">
-                        <div class="job-card-header">
-                            <div class="company-icon">🌐</div>
-                            <div class="company-info">
-                                <h4>创新互联文化传媒有限公司</h4>
-                                <span class="job-position">业务拓展经理</span>
-                            </div>
-                        </div>
-                        <div class="job-card-preview">
-                            <span class="preview-tag">点击查看详情</span>
-                        </div>
-                    </div>
-
-                    <!-- 招聘启事三 -->
-                    <div class="job-card" data-job="3">
-                        <div class="job-card-header">
-                            <div class="company-icon">🎮</div>
-                            <div class="company-info">
-                                <h4>极速互娱网络科技有限公司</h4>
-                                <span class="job-position">高级运营主管</span>
-                            </div>
-                        </div>
-                        <div class="job-card-preview">
-                            <span class="preview-tag">点击查看详情</span>
-                        </div>
-                    </div>
-
-                    <!-- 招聘启事四 -->
-                    <div class="job-card" data-job="4">
-                        <div class="job-card-header">
-                            <div class="company-icon">📚</div>
-                            <div class="company-info">
-                                <h4>阳光未来教育科技有限公司</h4>
-                                <span class="job-position">市场营销专员</span>
-                            </div>
-                        </div>
-                        <div class="job-card-preview">
-                            <span class="preview-tag">点击查看详情</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 招聘启事详情弹窗 -->
-                <div class="job-modal" id="jobModal">
-                    <div class="modal-content">
-                        <span class="modal-close">&times;</span>
-                        <div class="modal-body" id="modalBody">
-                            <!-- 动态内容 -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section-summary">
-                <div class="summary-box">
-                    <p>好的开始是成功的一半。<strong>平等就业</strong>是我们的权利，而<strong>劳动合同</strong>则是我们入职的"通行证"，它的签订意味着我们正式受到劳动法的保护。</p>
-                </div>
-            </div>
-
-            <div class="section-nav">
-                <a href="#section2" class="nav-next">进入环节二：工作进行时 →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 环节二 -->
-    <section id="section2" class="section section-two">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">环节二</span>
-                <h2 class="section-title">工作进行时——解锁你的"权利宝箱"</h2>
-            </div>
-            
-            <div class="section-intro">
-                <p>签了合同，入了职，恭喜你成为一名正式的劳动者！但在工作过程中，我们又有哪些法律保障呢？劳动法为我们构建了一个强大的"权利宝箱"，让我们一起来探索。</p>
-            </div>
-
-            <div class="activity-container">
-                <h3 class="activity-title">🎮 职场权益大闯关</h3>
-                <p class="activity-desc">了解职场中可能遇到的权益问题，然后在下方的连连看游戏中找出对应的劳动权利</p>
-
-                <div class="scenario-grid">
-                    <!-- 情境A -->
-                    <div class="scenario-card">
-                        <div class="scenario-header">
-                            <span class="scenario-label">情境 A</span>
-                            <span class="scenario-icon">⏰</span>
-                        </div>
-                        <div class="scenario-content">
-                            <p class="scenario-text">小王是某公司的销售人员。公司规定，每月必须完成一定业绩，否则就要"自愿"无偿加班，直到完成任务。小王为了保住工作，经常加班到深夜，却没有拿到一分钱加班费。</p>
-                        </div>
-                    </div>
-
-                    <!-- 情境B -->
-                    <div class="scenario-card">
-                        <div class="scenario-header">
-                            <span class="scenario-label">情境 B</span>
-                            <span class="scenario-icon">🤕</span>
-                        </div>
-                        <div class="scenario-content">
-                            <p class="scenario-text">小李在一家工厂工作，一天在操作机器时不小心手被划伤，去了医院。公司负责人却说，这是小李自己操作不当，公司不负责医疗费，也不算工伤。</p>
-                        </div>
-                    </div>
-
-                    <!-- 情境C -->
-                    <div class="scenario-card">
-                        <div class="scenario-header">
-                            <span class="scenario-label">情境 C</span>
-                            <span class="scenario-icon">🏥</span>
-                        </div>
-                        <div class="scenario-content">
-                            <p class="scenario-text">小张入职半年后感觉身体不适，去医院检查被确诊为某种疾病，需要休养。他向公司请了病假，但公司却以他"请假太多，影响工作"为由，扣发了他当月的大部分工资。</p>
-                        </div>
-                    </div>
-
-                    <!-- 情境D -->
-                    <div class="scenario-card">
-                        <div class="scenario-header">
-                            <span class="scenario-label">情境 D</span>
-                            <span class="scenario-icon">💳</span>
-                        </div>
-                        <div class="scenario-content">
-                            <p class="scenario-text">小赵入职时，公司人力资源部告诉他，为了"省事"，可以不用缴纳社会保险，工资会直接打到卡里，还会额外多给他几百块钱。小赵觉得这样更划算，就同意了。</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- 连连看配对游戏 -->
-            <div class="activity-container matching-game-wrapper">
-                <h3 class="activity-title">🎯 连连看：情境与权利配对</h3>
-                <p class="activity-desc">将左侧的职场情境与右侧对应的劳动权利进行配对，探索劳动法如何保护我们的权益！</p>
-                
-                <div id="matchingGame">
-                    <!-- 游戏内容由 JavaScript 动态生成 -->
-                </div>
-            </div>
-
-            <div class="section-summary">
-                <div class="summary-box">
-                    <p>劳动法为我们构建了一个强大的<strong>"权利宝箱"</strong>。了解并善用这些权利，是我们在职场中自我保护的底气。</p>
-                </div>
-            </div>
-
-            <div class="section-nav">
-                <a href="#section1" class="nav-prev">← 返回环节一：求职与入职</a>
-                <a href="#section3" class="nav-next">进入环节三：离职与维权 →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 环节三 -->
-    <section id="section3" class="section section-three">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">环节三</span>
-                <h2 class="section-title">离职与维权——铸造你的"法律盾牌"</h2>
-            </div>
-            
-            <div class="section-intro">
-                <p>职场生涯可能不会一帆风顺，当我们决定离开一家公司，或者不幸遇到纠纷时，劳动法又能如何帮助我们？它将是你最坚实的"法律盾牌"。</p>
-            </div>
-
-            <div class="activity-container">
-                <h3 class="activity-title">⚖️ 模拟劳动争议调解</h3>
-                <p class="activity-desc">点击下方角色，了解不同立场的主张和调解过程</p>
-
-                <div class="mediation-case">
-                    <div class="case-background">
-                        <h4>📋 案例背景</h4>
-                        <p>小王在某餐饮公司工作了8个月，公司一直未与他签订书面劳动合同，也未缴纳社会保险。最近，公司以"经营困难"为由，口头通知小王第二天不用来上班了，且拒绝支付任何经济补偿。小王认为自己权益受到侵害，向劳动保障监察部门投诉。</p>
-                    </div>
-
-                    <div class="mediation-roles">
-                        <div class="role-card" data-role="worker">
-                            <div class="role-header worker-role">
-                                <span class="role-icon">👷</span>
-                                <h4>劳动者小王</h4>
-                            </div>
-                            <div class="role-content" id="workerContent">
-                                <p class="role-intro">点击展开小王的主张</p>
-                            </div>
-                        </div>
-
-                        <div class="role-card" data-role="company">
-                            <div class="role-header company-role">
-                                <span class="role-icon">🏢</span>
-                                <h4>用人单位</h4>
-                            </div>
-                            <div class="role-content" id="companyContent">
-                                <p class="role-intro">点击展开公司的辩解</p>
-                            </div>
-                        </div>
-
-                        <div class="role-card" data-role="mediator">
-                            <div class="role-header mediator-role">
-                                <span class="role-icon">⚖️</span>
-                                <h4>劳动保障监察员</h4>
-                            </div>
-                            <div class="role-content" id="mediatorContent">
-                                <p class="role-intro">点击展开调解意见</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mediation-summary" id="mediationSummary">
-                        <h4>📝 老师总结</h4>
-                        <div class="summary-content">
-                            <p>点击上方角色查看完整案例解析</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section-nav">
-                <a href="#section2" class="nav-prev">← 返回环节二：工作进行时</a>
-                <a href="#summary" class="nav-next">查看课程总结 →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 总结部分 -->
-    <section id="summary" class="section summary-section">
-        <div class="container">
-            <h2 class="section-title">课程总结</h2>
-            
-            <div class="summary-grid">
-                <div class="summary-item">
-                    <div class="summary-icon">🎫</div>
-                    <h3>公平通行证</h3>
-                    <p>求职时保持警惕，识别违法招聘，签订劳动合同是受到法律保护的第一步。</p>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-icon">📦</div>
-                    <h3>权利宝箱</h3>
-                    <p>了解劳动报酬权、休息休假权、社会保险权等核心权益，在工作中保护自己。</p>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-icon">🛡️</div>
-                    <h3>法律盾牌</h3>
-                    <p>遇到劳动纠纷时，勇敢运用法律武器，通过合法途径维护自身权益。</p>
-                </div>
-            </div>
-
-            <div class="final-message">
-                <p>劳动法是我们每一位劳动者的"护身符"和"通行证"。</p>
-                <p class="emphasis">知法、懂法、用法，让法律为你的职场之路保驾护航！</p>
-            </div>
-        </div>
-    </section>
-
     <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
@@ -406,6 +77,14 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // 移动端菜单切换
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger?.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

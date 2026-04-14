@@ -69,31 +69,6 @@ const jobData = {
         ],
         positionRisk: null,
         riskCount: 3
-    },
-    4: {
-        company: '阳光未来教育科技有限公司',
-        position: '市场营销专员',
-        icon: '📚',
-        duties: [
-            { text: '协助市场部开展各项营销活动；', isRisky: false, riskType: '' },
-            { text: '负责市场信息收集与分析；', isRisky: false, riskType: '' },
-            { text: '社交媒体内容运营与维护。', isRisky: false, riskType: '' }
-        ],
-        requirements: [
-            { text: '大专及以上学历，市场营销相关专业优先；', isRisky: false, riskType: '' },
-            { text: '具备良好的学习能力和团队协作精神；', isRisky: false, riskType: '' },
-            { text: '熟练使用办公软件及基础设计软件。', isRisky: false, riskType: '' }
-        ],
-        benefits: [
-            { text: '月薪5000-7000元，提供年终奖金；', isRisky: false, riskType: '' },
-            { text: '五险一金齐全；', isRisky: false, riskType: 'good', riskDesc: '合规：依法缴纳社保' },
-            { text: '试用期2个月，期间薪资不低于转正工资的80%，签订正式劳动合同；', isRisky: false, riskType: 'good', riskDesc: '合规：试用期和合同规范' },
-            { text: '周末双休，法定节假日休息，享受带薪年假；', isRisky: false, riskType: 'good', riskDesc: '合规：保障休息休假权' },
-            { text: '定期团建，专业培训与晋升通道。', isRisky: false, riskType: '' }
-        ],
-        positionRisk: null,
-        riskCount: 0,
-        isGoodExample: true
     }
 };
 
@@ -198,85 +173,116 @@ const mediationData = {
 };
 
 const challengeData = {
-    nopay: '公司拖欠工资怎么办？根据《劳动法》第五十条，工资应当以货币形式按月支付给劳动者本人，不得克扣或者无故拖欠劳动者的工资。',
-    fired: '被无故开除怎么办？根据《劳动合同法》，用人单位解除劳动合同必须有法定理由，否则属于违法解除，应支付赔偿金。',
-    overtime: '被迫加班怎么办？根据《劳动法》，加班需支付加班费，且每月加班不得超过36小时。劳动者有权拒绝违法加班要求。'
+    title: '职场维权挑战赛',
+    description: '你已经学习了劳动法知识，现在来挑战一下，看看能否在模拟场景中正确维护自己的权益！',
+    questions: [
+        {
+            id: 1,
+            scenario: '你刚入职一家公司，HR让你签一份"自愿放弃社保"的协议，承诺每月多给你500元补贴。',
+            options: [
+                { text: '签吧，反正多拿钱，社保以后再说', isCorrect: false, feedback: '❌ 错误！社保是法定义务，不能自愿放弃。' },
+                { text: '拒绝签署，要求公司依法缴纳社保', isCorrect: true, feedback: '✅ 正确！缴纳社保是用人单位的法定义务，不能通过协议免除。' },
+                { text: '先签了，以后离职再要求补缴', isCorrect: false, feedback: '❌ 错误！即使签署了协议，也不能免除公司的法定义务。' }
+            ]
+        },
+        {
+            id: 2,
+            scenario: '公司通知你试用期为6个月，期间工资只有转正后的70%，且暂不签劳动合同。',
+            options: [
+                { text: '接受，试用期长点可以多学习', isCorrect: false, feedback: '❌ 错误！试用期最长不超过6个月，且工资不得低于转正工资的80%，入职就应签订劳动合同。' },
+                { text: '提出异议，要求缩短试用期并签订劳动合同', isCorrect: true, feedback: '✅ 正确！试用期最长6个月，工资不低于80%，且应在入职一个月内签订劳动合同。' },
+                { text: '先干着，转正后再说', isCorrect: false, feedback: '❌ 错误！不及时签合同，公司应支付双倍工资。' }
+            ]
+        },
+        {
+            id: 3,
+            scenario: '公司以"经营困难"为由要裁员，你在公司工作了2年3个月。',
+            options: [
+                { text: '接受裁员，拿一个月工资走人', isCorrect: false, feedback: '❌ 错误！工作2年3个月应获得2.5个月工资的经济补偿。' },
+                { text: '要求公司支付2.5个月工资的经济补偿', isCorrect: true, feedback: '✅ 正确！每满一年支付一个月工资，不满半年按半年算，满半年不满一年按一年算。' },
+                { text: '要求继续履行劳动合同', isCorrect: true, feedback: '✅ 正确！如果公司违法解除，你可以要求继续履行合同或获得赔偿金。' }
+            ]
+        },
+        {
+            id: 4,
+            scenario: '公司要求你每天工作10小时，周末也要加班，但不支付加班费。',
+            options: [
+                { text: '为了保住工作，默默忍受', isCorrect: false, feedback: '❌ 错误！加班应支付加班费，且每日工作时间不得超过8小时。' },
+                { text: '保留考勤记录，向劳动监察部门投诉', isCorrect: true, feedback: '✅ 正确！加班应支付1.5-3倍工资，可向劳动监察部门投诉或申请仲裁。' },
+                { text: '直接辞职，不追究了', isCorrect: false, feedback: '❌ 错误！即使辞职也可以要求支付加班费。' }
+            ]
+        },
+        {
+            id: 5,
+            scenario: '你在工作中受伤，公司说"你自己不小心，不算工伤"。',
+            options: [
+                { text: '自认倒霉，自己承担医药费', isCorrect: false, feedback: '❌ 错误！工作时间、工作场所内因工作原因受伤属于工伤。' },
+                { text: '要求公司申请工伤认定，享受工伤保险待遇', isCorrect: true, feedback: '✅ 正确！公司应在30日内申请工伤认定，享受医疗待遇和伤残补助。' },
+                { text: '先治疗，以后再说', isCorrect: false, feedback: '❌ 错误！工伤认定有1年的时效限制，应及时申请。' }
+            ]
+        }
+    ]
 };
-
-// ===== DOM Elements =====
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
-const challengeItems = document.querySelectorAll('.challenge-item');
-const challengePopup = document.getElementById('challengePopup');
-const popupClose = document.querySelector('.popup-close');
-const popupText = document.querySelector('.popup-text');
-const jobCards = document.querySelectorAll('.job-card');
-const jobModal = document.getElementById('jobModal');
-const modalClose = document.querySelector('.modal-close');
-const modalBody = document.getElementById('modalBody');
-const roleCards = document.querySelectorAll('.role-card');
-
-// ===== Navigation =====
-hamburger?.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
-
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-    });
-});
-
-// Navbar scroll effect
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.boxShadow = '0 1px 2px rgba(0, 0, 0, 0.05)';
-    }
-});
-
-// ===== Challenge Popup =====
-challengeItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const challenge = item.dataset.challenge;
-        popupText.textContent = challengeData[challenge];
-        challengePopup.classList.add('active');
-    });
-});
-
-popupClose?.addEventListener('click', () => {
-    challengePopup.classList.remove('active');
-});
-
-challengePopup?.addEventListener('click', (e) => {
-    if (e.target === challengePopup) {
-        challengePopup.classList.remove('active');
-    }
-});
 
 // ===== 找茬游戏功能 =====
 function startGame(jobId) {
+    // 清除之前的计时器
+    if (gameState.timer) {
+        clearInterval(gameState.timer);
+        gameState.timer = null;
+    }
+    
     gameState.isPlaying = true;
     gameState.currentJob = jobId;
     gameState.foundRisks = [];
-    gameState.timeLeft = 60;
+    gameState.timeLeft = 60; // 游戏时间60秒
     gameState.score = 0;
+    
+    // 启用条款点击交互
+    const jobDetail = document.getElementById('jobDetail');
+    const job = jobData[jobId];
+    if (jobDetail && job) {
+        jobDetail.querySelectorAll('.job-item').forEach(item => {
+            item.classList.add('clickable');
+            item.addEventListener('click', function() {
+                if (!gameState.isPlaying) return;
+                
+                const itemData = {
+                    text: this.textContent.trim(),
+                    isRisky: this.dataset.risk === 'true',
+                    riskType: this.dataset.type,
+                    riskDesc: getRiskDesc(this.textContent.trim(), job)
+                };
+                handleRiskClick(this, itemData);
+            });
+        });
+    }
+    
+    // 隐藏开始按钮
+    const startBtn = document.getElementById('startGameBtn');
+    if (startBtn) {
+        startBtn.style.display = 'none';
+    }
     
     updateGameUI();
     startTimer();
 }
 
 function startTimer() {
+    // 确保只有一个计时器在运行
+    if (gameState.timer) {
+        clearInterval(gameState.timer);
+    }
+    
     gameState.timer = setInterval(() => {
-        gameState.timeLeft--;
-        updateTimerDisplay();
+        if (gameState.timeLeft > 0) {
+            gameState.timeLeft--;
+            updateTimerDisplay();
+        }
         
         if (gameState.timeLeft <= 0) {
+            clearInterval(gameState.timer);
+            gameState.timer = null;
             endGame();
         }
     }, 1000);
@@ -285,12 +291,16 @@ function startTimer() {
 function updateTimerDisplay() {
     const timerEl = document.getElementById('gameTimer');
     if (timerEl) {
-        const minutes = Math.floor(gameState.timeLeft / 60);
-        const seconds = gameState.timeLeft % 60;
+        // 防止显示负数
+        const displayTime = Math.max(0, gameState.timeLeft);
+        const minutes = Math.floor(displayTime / 60);
+        const seconds = displayTime % 60;
         timerEl.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
         
-        if (gameState.timeLeft <= 10) {
+        if (displayTime <= 10) {
             timerEl.style.color = '#ef4444';
+        } else {
+            timerEl.style.color = '';
         }
     }
 }
@@ -306,34 +316,37 @@ function updateGameUI() {
 function handleRiskClick(element, itemData) {
     if (!gameState.isPlaying) return;
     
-    if (gameState.foundRisks.includes(itemData.text)) {
-        // 已经找过了
+    // 检查是否已经找到过
+    if (element.dataset.found === 'true') {
         showToast('已经找过这个了，继续找其他的！', 'info');
         return;
     }
     
+    // 标记为已找到
+    element.dataset.found = 'true';
+    
     if (itemData.isRisky && itemData.riskType !== 'good') {
-        // 找到了风险点
+        // 找到风险点
         gameState.foundRisks.push(itemData.text);
         gameState.score += 10;
-        element.classList.add('found-risk');
+        element.classList.add('risky-found');
         showToast(`🎯 找到了！${itemData.riskDesc}`, 'success');
         
-        // 显示解析
         showRiskAnalysis(itemData);
         
         updateGameUI();
         
-        // 检查是否找完了
         const job = jobData[gameState.currentJob];
         if (gameState.foundRisks.length >= job.riskCount) {
             setTimeout(() => endGame(true), 1500);
         }
     } else if (itemData.riskType === 'good') {
-        // 这是合规的点
+        // 找到合规点
+        element.classList.add('good-found');
         showToast('✅ 这是合规的内容，不是风险点哦！', 'info');
     } else {
-        // 点错了
+        // 普通条款（非风险）
+        element.style.opacity = '0.5';
         gameState.timeLeft = Math.max(0, gameState.timeLeft - 5);
         showToast('❌ 这不是风险点，时间-5秒！', 'error');
         updateTimerDisplay();
@@ -361,169 +374,241 @@ function showToast(message, type = 'info') {
     document.body.appendChild(toast);
     
     setTimeout(() => {
-        toast.classList.add('show');
-    }, 10);
-    
-    setTimeout(() => {
-        toast.classList.remove('show');
-        setTimeout(() => toast.remove(), 300);
-    }, 2500);
+        toast.remove();
+    }, 3000);
 }
 
 function endGame(completed = false) {
-    clearInterval(gameState.timer);
+    // 清除计时器
+    if (gameState.timer) {
+        clearInterval(gameState.timer);
+        gameState.timer = null;
+    }
+    
     gameState.isPlaying = false;
     
     const job = jobData[gameState.currentJob];
     const missedRisks = [];
     
-    // 收集未找到的风险点
+    const allItems = [
+        ...(job.duties || []),
+        ...(job.requirements || []),
+        ...(job.benefits || [])
+    ];
+    
+    allItems.forEach(item => {
+        if (item.isRisky && item.riskType !== 'good' && !gameState.foundRisks.includes(item.text)) {
+            missedRisks.push(item);
+        }
+    });
+    
     if (job.positionRisk && !gameState.foundRisks.includes(job.positionRisk.text)) {
         missedRisks.push(job.positionRisk);
     }
-    job.requirements.forEach(r => {
-        if (r.isRisky && !gameState.foundRisks.includes(r.text)) missedRisks.push(r);
-    });
-    job.benefits.forEach(b => {
-        if (b.isRisky && !gameState.foundRisks.includes(b.text)) missedRisks.push(b);
-    });
     
-    // 显示结果
-    showGameResult(completed, missedRisks);
-}
-
-function showGameResult(completed, missedRisks) {
-    const job = jobData[gameState.currentJob];
-    const resultDiv = document.getElementById('gameResult');
-    
-    let html = `
-        <div class="game-result-box">
-            <h3>${completed ? '🎉 恭喜通关！' : '⏰ 时间到！'}</h3>
-            <div class="result-stats">
-                <div class="stat">
-                    <span class="stat-value">${gameState.foundRisks.length}</span>
-                    <span class="stat-label">找到的风险点</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-value">${job.riskCount}</span>
-                    <span class="stat-label">总风险点数</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-value">${gameState.score}</span>
-                    <span class="stat-label">得分</span>
-                </div>
-            </div>
-    `;
-    
+    let missedRisksHtml = '';
     if (missedRisks.length > 0) {
-        html += `
+        missedRisksHtml = `
             <div class="missed-risks">
-                <h4>🔍 你还没找到的风险点：</h4>
+                <h5>😅 未找到的风险点：</h5>
                 <ul>
-                    ${missedRisks.map(r => `<li>${r.text} - ${r.riskDesc}</li>`).join('')}
+                    ${missedRisks.map(r => `<li>${r.text} - ${r.riskDesc || '风险点'}</li>`).join('')}
                 </ul>
             </div>
         `;
     }
     
-    html += `
-            <button class="restart-btn" onclick="restartGame()">🔄 再玩一次</button>
-            <button class="close-game-btn" onclick="closeJobModal()">关闭</button>
-        </div>
-    `;
-    
-    resultDiv.innerHTML = html;
-    resultDiv.style.display = 'block';
+    const resultDiv = document.getElementById('gameResult');
+    if (resultDiv) {
+        if (completed) {
+            resultDiv.innerHTML = `
+                <div class="game-result success">
+                    <h4>🎉 恭喜！全部找出！</h4>
+                    <p>得分: ${gameState.score}分 | 剩余时间: ${Math.max(0, gameState.timeLeft)}秒</p>
+                    <p>你真是个细心的求职者！</p>
+                    ${missedRisksHtml}
+                    <button class="restart-btn" onclick="restartGame()">🔄 再玩一次</button>
+                </div>
+            `;
+        } else {
+            resultDiv.innerHTML = `
+                <div class="game-result fail">
+                    <h4>⏰ 时间到！</h4>
+                    <p>找到了 ${gameState.foundRisks.length}/${job.riskCount} 个风险点</p>
+                    ${missedRisksHtml}
+                    <button class="restart-btn" onclick="restartGame()">🔄 再试一次</button>
+                </div>
+            `;
+        }
+        resultDiv.style.display = 'block';
+    }
 }
 
 function restartGame() {
-    document.getElementById('gameResult').style.display = 'none';
-    document.getElementById('riskAnalysis').style.display = 'none';
+    const resultDiv = document.getElementById('gameResult');
+    if (resultDiv) {
+        resultDiv.style.display = 'none';
+    }
+    
+    const analysisDiv = document.getElementById('riskAnalysis');
+    if (analysisDiv) {
+        analysisDiv.style.display = 'none';
+    }
+    
+    // 清除所有高亮
+    document.querySelectorAll('.found-risk').forEach(el => {
+        el.classList.remove('found-risk');
+    });
+    
     startGame(gameState.currentJob);
 }
 
-// ===== Job Modal with Game =====
-function createJobModalContent(jobId) {
-    const job = jobData[jobId];
-    
-    return `
-        <div class="game-header">
-            <div class="game-timer" id="gameTimer">1:00</div>
-            <div class="game-progress" id="gameProgress">已找到: 0/${job.riskCount}</div>
-            <button class="start-game-btn" onclick="startGame(${jobId})">🎮 开始找茬</button>
-        </div>
-        
-        <div class="modal-header">
-            <span class="company-icon">${job.icon}</span>
-            <div>
-                <h3>${job.company}</h3>
-                ${renderClickablePosition(job)}
-            </div>
-        </div>
-        
-        <div class="game-instruction">
-            <p>💡 <strong>游戏说明：</strong>点击招聘启事中可能存在法律风险的条款，找出所有${job.riskCount}个风险点！点错会扣5秒时间哦！</p>
-        </div>
-        
-        <div class="job-detail-section">
-            <h4>📋 岗位职责</h4>
-            <ul>
-                ${job.duties.map(duty => `<li>${duty.text}</li>`).join('')}
-            </ul>
-        </div>
-        
-        <div class="job-detail-section">
-            <h4>🎯 任职要求</h4>
-            <ul class="clickable-list">
-                ${job.requirements.map(req => renderClickableItem(req)).join('')}
-            </ul>
-        </div>
-        
-        <div class="job-detail-section">
-            <h4>💰 薪资福利</h4>
-            <ul class="clickable-list">
-                ${job.benefits.map(benefit => renderClickableItem(benefit)).join('')}
-            </ul>
-        </div>
-        
-        <div id="riskAnalysis" class="risk-analysis" style="display: none;"></div>
-        <div id="gameResult" class="game-result" style="display: none;"></div>
-    `;
-}
-
-function renderClickablePosition(job) {
-    if (job.positionRisk) {
-        return `<p class="position clickable-risk" data-risk='${JSON.stringify(job.positionRisk).replace(/'/g, "&#39;")}' onclick="handleRiskClick(this, ${JSON.stringify(job.positionRisk).replace(/"/g, '&quot;')})">${job.position} <span class="click-hint">👆 点击检查</span></p>`;
-    }
-    return `<p class="position">${job.position}</p>`;
-}
-
-function renderClickableItem(item) {
-    return `<li class="clickable-item ${item.isRisky ? 'has-risk' : ''}" data-risk='${JSON.stringify(item).replace(/'/g, "&#39;")}' onclick="handleRiskClick(this, ${JSON.stringify(item).replace(/"/g, '&quot;')})">${item.text} <span class="click-hint">👆</span></li>`;
-}
-
-jobCards.forEach(card => {
-    card.addEventListener('click', () => {
-        const jobId = card.dataset.job;
-        modalBody.innerHTML = createJobModalContent(jobId);
-        jobModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    });
-});
-
-modalClose?.addEventListener('click', closeJobModal);
-
-jobModal?.addEventListener('click', (e) => {
-    if (e.target === jobModal) {
-        closeJobModal();
-    }
-});
-
 function closeJobModal() {
-    clearInterval(gameState.timer);
+    // 清除计时器
+    if (gameState.timer) {
+        clearInterval(gameState.timer);
+        gameState.timer = null;
+    }
+    
     gameState.isPlaying = false;
-    jobModal.classList.remove('active');
+    gameState.currentJob = null;
+    
+    const jobModal = document.getElementById('jobModal');
+    if (jobModal) {
+        jobModal.classList.remove('active');
+    }
+    
     document.body.style.overflow = '';
+}
+
+// ===== 环节三调解案例功能 =====
+let discussionTimerInterval = null;
+
+function showRoleContent(role, cardElement) {
+    const data = mediationData[role];
+    if (!data) return;
+    
+    const contentDiv = cardElement.querySelector('.role-content');
+    if (!contentDiv) return;
+    
+    // 检查是否已经展开
+    if (contentDiv.dataset.expanded === 'true') {
+        // 收起
+        contentDiv.innerHTML = `<p class="role-intro">点击展开${role === 'worker' ? '小王的主张' : role === 'company' ? '公司的辩解' : '调解意见'}</p>`;
+        contentDiv.dataset.expanded = 'false';
+        cardElement.classList.remove('expanded');
+        return;
+    }
+    
+    // 展开内容
+    contentDiv.innerHTML = `
+        <div class="role-points">
+            ${data.points.map((point, index) => `
+                <div class="role-point" style="animation: fadeInUp 0.3s ease ${index * 0.1}s both;">
+                    <span class="point-number">${index + 1}</span>
+                    <p>${point}</p>
+                </div>
+            `).join('')}
+        </div>
+    `;
+    contentDiv.dataset.expanded = 'true';
+    cardElement.classList.add('expanded');
+    
+    // 检查是否双方都展开了，如果是则开始讨论计时
+    checkBothSidesExpanded();
+}
+
+function checkBothSidesExpanded() {
+    const workerCard = document.querySelector('.role-card[data-role="worker"]');
+    const companyCard = document.querySelector('.role-card[data-role="company"]');
+    const mediatorCard = document.getElementById('mediatorCard');
+    const discussionTimer = document.getElementById('discussionTimer');
+    
+    if (!workerCard || !companyCard || !mediatorCard) return;
+    
+    const workerExpanded = workerCard.querySelector('.role-content')?.dataset.expanded === 'true';
+    const companyExpanded = companyCard.querySelector('.role-content')?.dataset.expanded === 'true';
+    
+    // 如果双方都展开了，且调解员卡片还没显示，开始计时
+    if (workerExpanded && companyExpanded && mediatorCard.style.display === 'none' && !discussionTimerInterval) {
+        startDiscussionTimer();
+    }
+}
+
+function startDiscussionTimer() {
+    const discussionTimer = document.getElementById('discussionTimer');
+    const timerCountdown = document.getElementById('timerCountdown');
+    
+    if (discussionTimer) {
+        discussionTimer.style.display = 'block';
+        discussionTimer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    
+    let timeLeft = 90; // 1分30秒 = 90秒
+    
+    discussionTimerInterval = setInterval(() => {
+        timeLeft--;
+        
+        // 更新显示
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        if (timerCountdown) {
+            timerCountdown.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        // 时间到
+        if (timeLeft <= 0) {
+            clearInterval(discussionTimerInterval);
+            discussionTimerInterval = null;
+            showMediatorCard();
+        }
+    }, 1000);
+}
+
+function showMediatorCard() {
+    const mediatorCard = document.getElementById('mediatorCard');
+    const discussionTimer = document.getElementById('discussionTimer');
+    
+    if (mediatorCard) {
+        mediatorCard.style.display = 'block';
+        // 添加动画效果
+        mediatorCard.style.animation = 'fadeInUp 0.5s ease';
+        mediatorCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    
+    // 更新计时器显示为完成状态
+    if (discussionTimer) {
+        discussionTimer.innerHTML = `
+            <div class="timer-display" style="background: var(--success-color);">
+                <span class="timer-icon">✅</span>
+                <span class="timer-text">讨论时间结束</span>
+                <span class="timer-countdown">00:00</span>
+            </div>
+            <p class="timer-hint">调解员意见已公布，请点击上方卡片查看。</p>
+        `;
+    }
+}
+
+function updateMediationSummary() {
+    const summaryDiv = document.getElementById('mediationSummary');
+    if (!summaryDiv) return;
+    
+    const expandedCards = document.querySelectorAll('.role-card.expanded');
+    if (expandedCards.length === 3) {
+        summaryDiv.innerHTML = `
+            <h4>📝 案例总结</h4>
+            <div class="summary-content">
+                <p><strong>法律依据：</strong></p>
+                <ul>
+                    <li>《劳动合同法》第十条：建立劳动关系应当订立书面劳动合同</li>
+                    <li>《劳动合同法》第八十二条：未签劳动合同应支付双倍工资</li>
+                    <li>《劳动合同法》第四十七条：经济补偿按工作年限计算</li>
+                    <li>《社会保险法》：用人单位必须依法缴纳社会保险</li>
+                </ul>
+                <p style="margin-top: 1rem;"><strong>维权途径：</strong>协商 → 调解 → 仲裁 → 诉讼</p>
+            </div>
+        `;
+    }
 }
 
 // ===== 连连看配对游戏功能 =====
@@ -545,7 +630,6 @@ function renderMatchingGame() {
     const container = document.getElementById('matchingGame');
     if (!container) return;
 
-    // 使用已保存的打乱顺序，如果没有则创建
     const rightsToRender = matchingGameState.shuffledRights || matchingGameData.rights;
 
     container.innerHTML = `
@@ -562,50 +646,59 @@ function renderMatchingGame() {
             
             <div class="matching-board">
                 <div class="scenarios-column">
-                    <h4>📋 职场情境</h4>
-                    ${matchingGameData.scenarios.map(s => {
-                        const matchedCount = getMatchedRightsCount(s.id);
-                        const totalCount = s.matchedRights.length;
-                        const isFullyMatched = matchedCount === totalCount;
+                    <h4>职场情境</h4>
+                    ${matchingGameData.scenarios.map(scenario => {
+                        const isMatched = isScenarioMatched(scenario.id);
+                        const matchedCount = getMatchedRightsCount(scenario.id);
+                        const totalMatches = scenario.matchedRights.length;
+                        const progressText = matchedCount > 0 ? ` (${matchedCount}/${totalMatches})` : '';
+                        
                         return `
-                        <div class="scenario-match-card ${isFullyMatched ? 'matched' : ''} ${matchingGameState.selectedScenario === s.id ? 'selected' : ''}" 
-                             data-scenario="${s.id}" 
-                             onclick="selectScenario('${s.id}')">
-                            <div class="match-card-icon">${s.icon}</div>
-                            <div class="match-card-content">
-                                <div class="match-card-title">${s.title}</div>
-                                <div class="match-card-desc">${s.shortDesc}</div>
-                                <div class="match-progress">${matchedCount}/${totalCount}</div>
+                            <div class="scenario-match-card ${matchingGameState.selectedScenario === scenario.id ? 'selected' : ''} ${isMatched ? 'matched' : ''}" 
+                                 data-id="${scenario.id}"
+                                 onclick="selectScenario('${scenario.id}')">
+                                <div class="scenario-icon">${scenario.icon}</div>
+                                <div class="scenario-info">
+                                    <div class="scenario-title">${scenario.title}${progressText}</div>
+                                    <div class="scenario-desc">${scenario.shortDesc}</div>
+                                </div>
                             </div>
-                            ${isFullyMatched ? '<div class="match-check">✓</div>' : ''}
-                        </div>
-                    `}).join('')}
+                        `;
+                    }).join('')}
                 </div>
                 
-                <div class="matching-lines">
-                    <svg id="matchingLines" width="100" height="400">
-                        ${renderConnectionLines()}
-                    </svg>
+                <div class="matching-arrow">
+                    <span>➡️</span>
                 </div>
                 
                 <div class="rights-column">
-                    <h4>⚖️ 劳动权利</h4>
-                    ${rightsToRender.map(r => `
-                        <div class="right-match-card ${isRightMatched(r.id) ? 'matched' : ''} ${matchingGameState.selectedRight === r.id ? 'selected' : ''}" 
-                             data-right="${r.id}" 
-                             onclick="selectRight('${r.id}')">
-                            <div class="match-card-icon">${r.icon}</div>
-                            <div class="match-card-content">
-                                <div class="match-card-title">${r.name}</div>
-                                <div class="match-card-desc">${r.desc}</div>
+                    <h4>劳动权利</h4>
+                    ${rightsToRender.map(right => {
+                        const isMatched = matchingGameState.matchedPairs.some(p => p.right === right.id);
+                        return `
+                            <div class="right-match-card ${matchingGameState.selectedRight === right.id ? 'selected' : ''} ${isMatched ? 'matched' : ''}" 
+                                 data-id="${right.id}"
+                                 onclick="selectRight('${right.id}')">
+                                <div class="right-icon">${right.icon}</div>
+                                <div class="right-info">
+                                    <div class="right-name">${right.name}</div>
+                                    <div class="right-desc">${right.desc}</div>
+                                </div>
                             </div>
-                            ${isRightMatched(r.id) ? '<div class="match-check">✓</div>' : ''}
-                        </div>
-                    `).join('')}
+                        `;
+                    }).join('')}
                 </div>
             </div>
             
-            <div id="matchingResult" class="matching-result" style="display: none;"></div>
+            <div id="matchingFeedback" class="matching-feedback"></div>
+            
+            ${matchingGameState.isComplete ? `
+                <div class="matching-complete">
+                    <h4>🎉 恭喜完成！</h4>
+                    <p>最终得分: ${matchingGameState.score}分 | 尝试次数: ${matchingGameState.attempts}</p>
+                    <button class="restart-btn" onclick="initMatchingGame()">🔄 再玩一次</button>
+                </div>
+            ` : ''}
         </div>
     `;
 }
@@ -614,7 +707,6 @@ function isScenarioMatched(scenarioId) {
     const scenario = matchingGameData.scenarios.find(s => s.id === scenarioId);
     if (!scenario) return false;
 
-    // 检查该情境的所有对应权利是否都已被配对
     const matchedRightsForScenario = matchingGameState.matchedPairs
         .filter(p => p.scenario === scenarioId)
         .map(p => p.right);
@@ -626,43 +718,37 @@ function getMatchedRightsCount(scenarioId) {
     return matchingGameState.matchedPairs.filter(p => p.scenario === scenarioId).length;
 }
 
-function isRightMatched(rightId) {
-    return matchingGameState.matchedPairs.some(p => p.right === rightId);
-}
-
-function renderConnectionLines() {
-    // 这里可以绘制连线，简化版先不实现
-    return '';
-}
-
 function selectScenario(scenarioId) {
     if (matchingGameState.isComplete) return;
-    if (isScenarioMatched(scenarioId)) return;
     
-    // 取消之前的选择
-    if (matchingGameState.selectedScenario === scenarioId) {
-        matchingGameState.selectedScenario = null;
-    } else {
-        matchingGameState.selectedScenario = scenarioId;
+    const scenario = matchingGameData.scenarios.find(s => s.id === scenarioId);
+    if (isScenarioMatched(scenarioId)) {
+        showMatchingFeedback('该情境已完成配对！', 'info');
+        return;
     }
     
+    matchingGameState.selectedScenario = scenarioId;
     renderMatchingGame();
-    checkMatch();
+    
+    if (matchingGameState.selectedRight) {
+        checkMatch();
+    }
 }
 
 function selectRight(rightId) {
     if (matchingGameState.isComplete) return;
-    if (isRightMatched(rightId)) return;
     
-    // 取消之前的选择
-    if (matchingGameState.selectedRight === rightId) {
-        matchingGameState.selectedRight = null;
-    } else {
-        matchingGameState.selectedRight = rightId;
+    if (matchingGameState.matchedPairs.some(p => p.right === rightId)) {
+        showMatchingFeedback('该权利已被配对！', 'info');
+        return;
     }
     
+    matchingGameState.selectedRight = rightId;
     renderMatchingGame();
-    checkMatch();
+    
+    if (matchingGameState.selectedScenario) {
+        checkMatch();
+    }
 }
 
 function checkMatch() {
@@ -676,218 +762,307 @@ function checkMatch() {
     const isCorrect = scenario.matchedRights.includes(selectedRight);
     
     if (isCorrect) {
-        // 配对成功
         matchingGameState.matchedPairs.push({
             scenario: selectedScenario,
             right: selectedRight
         });
         matchingGameState.score += 10;
+        showMatchingFeedback('✅ 配对成功！', 'success');
         
-        showToast('🎉 配对成功！+10分', 'success');
-        
-        // 显示解析
-        showMatchAnalysis(scenario, selectedRight);
-        
-        // 清除选择
-        matchingGameState.selectedScenario = null;
-        matchingGameState.selectedRight = null;
-        
-        // 检查是否完成
-        if (matchingGameState.matchedPairs.length === 7) { // 总共7对配对
-            setTimeout(() => showMatchingResult(), 1000);
+        if (isScenarioMatched(selectedScenario)) {
+            showMatchingFeedback(`🎉 情境${selectedScenario}完成！`, 'success');
         }
     } else {
-        // 配对失败
-        showToast('❌ 配对错误，请再想想！', 'error');
-        
-        // 清除选择
-        matchingGameState.selectedScenario = null;
-        matchingGameState.selectedRight = null;
+        matchingGameState.score = Math.max(0, matchingGameState.score - 5);
+        showMatchingFeedback('❌ 配对错误，再想想看！', 'error');
     }
     
-    updateMatchingUI();
+    matchingGameState.selectedScenario = null;
+    matchingGameState.selectedRight = null;
+    
+    const allMatched = matchingGameData.scenarios.every(s => isScenarioMatched(s.id));
+    if (allMatched) {
+        matchingGameState.isComplete = true;
+    }
+    
     renderMatchingGame();
 }
 
-function showMatchAnalysis(scenario, rightId) {
-    const right = matchingGameData.rights.find(r => r.id === rightId);
-    const resultDiv = document.getElementById('matchingResult');
-    
-    resultDiv.innerHTML = `
-        <div class="match-analysis-box">
-            <h5>✅ 配对成功！</h5>
-            <p><strong>情境：</strong>${scenario.shortDesc}</p>
-            <p><strong>权利：</strong>${right.name}</p>
-            <p class="match-reason">${getMatchReason(scenario.id, rightId)}</p>
-        </div>
-    `;
-    resultDiv.style.display = 'block';
-}
-
-function getMatchReason(scenarioId, rightId) {
-    const reasons = {
-        'A_rights_1': '公司要求无偿加班，侵犯了劳动者获得加班费的权利。',
-        'A_rights_2': '长期加班侵犯了劳动者的休息休假权。',
-        'B_rights_3': '公司不提供安全的工作环境，侵犯了劳动安全卫生保护权。',
-        'B_rights_4': '公司拒绝认定工伤，侵犯了获得工伤保险待遇的权利。',
-        'C_rights_2': '公司扣发病假工资，侵犯了休息休假权。',
-        'C_rights_5': '公司不承认医疗期，侵犯了获得医疗期保障权。',
-        'D_rights_6': '公司不缴纳社保，侵犯了获得社会保险待遇权。'
-    };
-    return reasons[`${scenarioId}_${rightId}`] || '该情境涉及此项权利的侵犯。';
-}
-
-function updateMatchingUI() {
-    const scoreEl = document.getElementById('matchingScore');
-    const attemptsEl = document.getElementById('matchingAttempts');
-    const progressEl = document.getElementById('matchingProgress');
-    
-    if (scoreEl) scoreEl.textContent = matchingGameState.score;
-    if (attemptsEl) attemptsEl.textContent = matchingGameState.attempts;
-    if (progressEl) progressEl.textContent = `${matchingGameState.matchedPairs.length}/7`;
-}
-
-function showMatchingResult() {
-    matchingGameState.isComplete = true;
-    
-    const resultDiv = document.getElementById('matchingResult');
-    resultDiv.innerHTML = `
-        <div class="matching-final-result">
-            <h3>🎊 恭喜完成所有配对！</h3>
-            <div class="final-stats">
-                <div class="final-stat">
-                    <span class="final-value">${matchingGameState.score}</span>
-                    <span class="final-label">总得分</span>
-                </div>
-                <div class="final-stat">
-                    <span class="final-value">${matchingGameState.attempts}</span>
-                    <span class="final-label">尝试次数</span>
-                </div>
-                <div class="final-stat">
-                    <span class="final-value">${Math.round((7 / matchingGameState.attempts) * 100)}%</span>
-                    <span class="final-label">正确率</span>
-                </div>
-            </div>
-            <button class="restart-matching-btn" onclick="initMatchingGame()">🔄 再玩一次</button>
-        </div>
-    `;
-    resultDiv.style.display = 'block';
-}
-
-// ===== Mediation Roles =====
-let revealedRoles = new Set();
-
-roleCards.forEach(card => {
-    card.addEventListener('click', () => {
-        const role = card.dataset.role;
-        const contentDiv = card.querySelector('.role-content');
-        const data = mediationData[role];
+function showMatchingFeedback(message, type) {
+    const feedbackDiv = document.getElementById('matchingFeedback');
+    if (feedbackDiv) {
+        feedbackDiv.textContent = message;
+        feedbackDiv.className = `matching-feedback ${type}`;
         
-        // Toggle content
-        if (contentDiv.querySelector('.role-details')) {
-            contentDiv.innerHTML = '<p class="role-intro">点击展开' + 
-                (role === 'worker' ? '小王的主张' : 
-                 role === 'company' ? '公司的辩解' : '调解意见') + '</p>';
-            card.classList.remove('active');
-            revealedRoles.delete(role);
-        } else {
-            contentDiv.innerHTML = `
-                <div class="role-details">
-                    <h5>${data.title}</h5>
-                    <ul>
-                        ${data.points.map(point => `<li>${point}</li>`).join('')}
-                    </ul>
-                </div>
-            `;
-            card.classList.add('active');
-            revealedRoles.add(role);
-        }
-        
-        // Update summary if all roles revealed
-        updateMediationSummary();
-    });
-});
-
-function updateMediationSummary() {
-    const summaryDiv = document.querySelector('.summary-content');
-    
-    if (revealedRoles.size === 3) {
-        summaryDiv.innerHTML = `
-            <div class="full-summary">
-                <h5>📚 本案涉及的主要法律知识点</h5>
-                <ul>
-                    <li><strong>书面劳动合同：</strong>建立劳动关系应当订立书面劳动合同，超过一个月未签合同的，用人单位应支付双倍工资。</li>
-                    <li><strong>社会保险：</strong>缴纳社保是法定义务，不能协商免除。未缴社保的，劳动者可要求补缴。</li>
-                    <li><strong>违法解除赔偿：</strong>用人单位违法解除劳动合同，应按经济补偿标准的二倍支付赔偿金。</li>
-                    <li><strong>维权途径：</strong>劳动争议可通过协商、调解、仲裁、诉讼等方式解决。劳动仲裁是诉讼的前置程序。</li>
-                </ul>
-                <h5>💡 给同学们的建议</h5>
-                <ul>
-                    <li>入职时务必签订书面劳动合同，并保留一份原件</li>
-                    <li>关注社保缴纳情况，定期查询个人社保账户</li>
-                    <li>保存好工资条、考勤记录等重要证据</li>
-                    <li>遇到劳动纠纷，及时向劳动监察部门投诉或申请劳动仲裁</li>
-                    <li>了解法律、善用法律，是维护自身权益的最佳方式</li>
-                </ul>
-            </div>
-        `;
-    } else {
-        const remaining = 3 - revealedRoles.size;
-        summaryDiv.innerHTML = `<p>已查看 ${revealedRoles.size}/3 个角色，还剩 ${remaining} 个角色待查看</p>`;
+        setTimeout(() => {
+            feedbackDiv.textContent = '';
+            feedbackDiv.className = 'matching-feedback';
+        }, 2000);
     }
 }
 
-// ===== Keyboard Navigation =====
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        closeJobModal();
-        challengePopup.classList.remove('active');
-    }
-});
-
-// ===== Intersection Observer for Animations =====
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+// ===== 挑战赛功能 =====
+let challengeState = {
+    currentQuestion: 0,
+    score: 0,
+    answers: []
 };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+function initChallenge() {
+    challengeState = {
+        currentQuestion: 0,
+        score: 0,
+        answers: []
+    };
+    
+    renderChallenge();
+}
+
+function renderChallenge() {
+    const container = document.getElementById('challengeContainer');
+    if (!container) return;
+    
+    if (challengeState.currentQuestion >= challengeData.questions.length) {
+        showChallengeResult();
+        return;
+    }
+    
+    const question = challengeData.questions[challengeState.currentQuestion];
+    
+    container.innerHTML = `
+        <div class="challenge-question">
+            <div class="challenge-progress">
+                问题 ${challengeState.currentQuestion + 1}/${challengeData.questions.length}
+            </div>
+            <h4>${question.scenario}</h4>
+            <div class="challenge-options">
+                ${question.options.map((option, index) => `
+                    <button class="challenge-option" onclick="selectChallengeOption(${index})">
+                        ${option.text}
+                    </button>
+                `).join('')}
+            </div>
+            <div id="challengeFeedback"></div>
+        </div>
+    `;
+}
+
+function selectChallengeOption(optionIndex) {
+    const question = challengeData.questions[challengeState.currentQuestion];
+    const selectedOption = question.options[optionIndex];
+    
+    challengeState.answers.push({
+        question: challengeState.currentQuestion,
+        selected: optionIndex,
+        isCorrect: selectedOption.isCorrect
+    });
+    
+    if (selectedOption.isCorrect) {
+        challengeState.score += 20;
+    }
+    
+    const feedbackDiv = document.getElementById('challengeFeedback');
+    if (feedbackDiv) {
+        feedbackDiv.innerHTML = `
+            <div class="challenge-feedback ${selectedOption.isCorrect ? 'correct' : 'incorrect'}">
+                <p>${selectedOption.feedback}</p>
+                <button class="next-btn" onclick="nextChallengeQuestion()">
+                    ${challengeState.currentQuestion < challengeData.questions.length - 1 ? '下一题 ➡️' : '查看结果 📊'}
+                </button>
+            </div>
+        `;
+    }
+    
+    document.querySelectorAll('.challenge-option').forEach((btn, index) => {
+        btn.disabled = true;
+        if (index === optionIndex) {
+            btn.classList.add(selectedOption.isCorrect ? 'correct' : 'incorrect');
         }
     });
-}, observerOptions);
+}
 
-// Observe cards for fade-in animation
-document.querySelectorAll('.job-card, .scenario-card, .role-card, .summary-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(el);
-});
+function nextChallengeQuestion() {
+    challengeState.currentQuestion++;
+    renderChallenge();
+}
 
-// ===== Smooth Scroll for Anchor Links =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const navHeight = document.querySelector('.navbar').offsetHeight;
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
+function showChallengeResult() {
+    const container = document.getElementById('challengeContainer');
+    if (!container) return;
+    
+    const percentage = (challengeState.score / (challengeData.questions.length * 20)) * 100;
+    let level = '';
+    let emoji = '';
+    
+    if (percentage >= 80) {
+        level = '维权达人';
+        emoji = '🏆';
+    } else if (percentage >= 60) {
+        level = '维权能手';
+        emoji = '🥈';
+    } else if (percentage >= 40) {
+        level = '维权新手';
+        emoji = '📚';
+    } else {
+        level = '需要加油';
+        emoji = '💪';
+    }
+    
+    container.innerHTML = `
+        <div class="challenge-result">
+            <h3>${emoji} 挑战完成！</h3>
+            <div class="result-score">得分: ${challengeState.score}/${challengeData.questions.length * 20}</div>
+            <div class="result-level">等级: ${level}</div>
+            <div class="result-percentage">正确率: ${percentage.toFixed(0)}%</div>
+            <button class="restart-btn" onclick="initChallenge()">🔄 再挑战一次</button>
+        </div>
+    `;
+}
 
-// ===== Initialize =====
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('劳动法课程网页已加载完成');
+// ===== 页面初始化 =====
+document.addEventListener('DOMContentLoaded', function() {
+    // 初始化找茬游戏公司卡片
+    const jobCardsContainer = document.getElementById('jobCards');
+    if (jobCardsContainer) {
+        jobCardsContainer.innerHTML = Object.entries(jobData).map(([id, job]) => `
+            <div class="job-card" data-job-id="${id}">
+                <div class="job-icon">${job.icon}</div>
+                <div class="job-company">${job.company}</div>
+                <div class="job-position">${job.position}</div>
+                <button class="start-game-btn" onclick="openJobDetail(${id})">👀 查看详情</button>
+            </div>
+        `).join('');
+    }
     
     // 初始化连连看游戏
     initMatchingGame();
+    
+    // 初始化挑战赛
+    initChallenge();
+    
+    // 调解案例标签切换
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const tab = this.dataset.tab;
+            
+            tabBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(tab)?.classList.add('active');
+        });
+    });
+    
+    // 环节三角色卡片点击事件
+    const roleCards = document.querySelectorAll('.role-card');
+    roleCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const role = this.dataset.role;
+            if (role && mediationData[role]) {
+                showRoleContent(role, this);
+            }
+        });
+    });
+    
+    // 模态框关闭事件
+    const jobModal = document.getElementById('jobModal');
+    jobModal?.addEventListener('click', (e) => {
+        if (e.target === jobModal) {
+            closeJobModal();
+        }
+    });
 });
+
+function openJobDetail(jobId) {
+    const job = jobData[jobId];
+    if (!job) return;
+    
+    const jobModal = document.getElementById('jobModal');
+    const jobDetail = document.getElementById('jobDetail');
+    
+    if (!jobModal || !jobDetail) return;
+    
+    // 重置游戏状态
+    gameState.isPlaying = false;
+    gameState.currentJob = null;
+    gameState.foundRisks = [];
+    gameState.timeLeft = 60;
+    gameState.score = 0;
+    if (gameState.timer) {
+        clearInterval(gameState.timer);
+        gameState.timer = null;
+    }
+    
+    jobDetail.innerHTML = `
+        <div class="job-detail-header">
+            <div class="job-detail-icon">${job.icon}</div>
+            <div class="job-detail-title">
+                <h3>${job.company}</h3>
+                <p class="job-position">${job.position}</p>
+            </div>
+        </div>
+        
+        <div class="game-status-bar">
+            <div class="game-timer" id="gameTimer">1:00</div>
+            <div class="game-progress" id="gameProgress">已找到: 0/${job.riskCount}</div>
+        </div>
+        
+        <div class="job-section">
+            <h4>📋 岗位职责</h4>
+            <ul class="job-list">
+                ${job.duties.map(item => `
+                    <li class="job-item" data-risk="${item.isRisky}" data-type="${item.riskType}" data-found="false">
+                        ${item.text}
+                    </li>
+                `).join('')}
+            </ul>
+        </div>
+        
+        <div class="job-section">
+            <h4>📝 任职要求</h4>
+            <ul class="job-list">
+                ${job.requirements.map(item => `
+                    <li class="job-item" data-risk="${item.isRisky}" data-type="${item.riskType}" data-found="false">
+                        ${item.text}
+                    </li>
+                `).join('')}
+            </ul>
+        </div>
+        
+        <div class="job-section">
+            <h4>💼 福利待遇</h4>
+            <ul class="job-list">
+                ${job.benefits.map(item => `
+                    <li class="job-item" data-risk="${item.isRisky}" data-type="${item.riskType}" data-found="false">
+                        ${item.text}
+                    </li>
+                `).join('')}
+            </ul>
+        </div>
+        
+        <div id="riskAnalysis" class="risk-analysis" style="display: none;"></div>
+        <div id="gameResult" class="game-result" style="display: none;"></div>
+        
+        <div class="game-controls">
+            <button class="start-game-btn" id="startGameBtn" onclick="startGame(${jobId})">🎮 开始找茬</button>
+            <button class="close-modal-btn" onclick="closeJobModal()">❌ 关闭</button>
+        </div>
+    `;
+    
+    jobModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function getRiskDesc(text, job) {
+    const allItems = [
+        ...(job.duties || []),
+        ...(job.requirements || []),
+        ...(job.benefits || [])
+    ];
+    
+    const item = allItems.find(i => i.text === text);
+    return item?.riskDesc || '';
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>环节三：离职与维权 - 劳动法课程</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">⚖️</span>
+                <span class="logo-text"><a href="index.html">劳动法课堂</a></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">首页</a></li>
+                <li><a href="section1.html" class="nav-link">环节一</a></li>
+                <li><a href="section2.html" class="nav-link">环节二</a></li>
+                <li><a href="section3.html" class="nav-link active">环节三</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 环节三 -->
+    <section id="section3" class="section section-three" style="padding-top: 100px;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">环节三</span>
+                <h2 class="section-title">离职与维权——铸造你的"法律盾牌"</h2>
+            </div>
+            
+            <div class="section-intro">
+                <p>职场生涯可能不会一帆风顺，当我们决定离开一家公司，或者不幸遇到纠纷时，劳动法又能如何帮助我们？它将是你最坚实的"法律盾牌"。</p>
+            </div>
+
+            <div class="activity-container">
+                <h3 class="activity-title">⚖️ 模拟劳动争议调解</h3>
+                <p class="activity-desc">点击下方角色，了解不同立场的主张和调解过程</p>
+
+                <div class="mediation-case">
+                    <div class="case-background">
+                        <h4>📋 案例背景</h4>
+                        <p>小王在某餐饮公司工作了8个月，公司一直未与他签订书面劳动合同，也未缴纳社会保险。最近，公司以"经营困难"为由，口头通知小王第二天不用来上班了，且拒绝支付任何经济补偿。小王认为自己权益受到侵害，向劳动保障监察部门投诉。</p>
+                    </div>
+
+                    <div class="activity-instruction">
+                        <p>📋 <strong>活动说明：</strong>请先点击上方两个卡片，了解劳动者和用人单位双方的主张。双方观点都展开后，将有1分30秒的小组讨论时间，之后调解员卡片才会出现。</p>
+                    </div>
+
+                    <div class="mediation-roles">
+                        <div class="role-card" data-role="worker">
+                            <div class="role-header worker-role">
+                                <span class="role-icon">👷</span>
+                                <h4>劳动者小王</h4>
+                            </div>
+                            <div class="role-content" id="workerContent">
+                                <p class="role-intro">点击展开小王的主张</p>
+                            </div>
+                        </div>
+
+                        <div class="role-card" data-role="company">
+                            <div class="role-header company-role">
+                                <span class="role-icon">🏢</span>
+                                <h4>用人单位</h4>
+                            </div>
+                            <div class="role-content" id="companyContent">
+                                <p class="role-intro">点击展开公司的辩解</p>
+                            </div>
+                        </div>
+
+                        <div class="role-card" data-role="mediator" id="mediatorCard" style="display: none;">
+                            <div class="role-header mediator-role">
+                                <span class="role-icon">⚖️</span>
+                                <h4>劳动保障监察员</h4>
+                            </div>
+                            <div class="role-content" id="mediatorContent">
+                                <p class="role-intro">点击展开调解意见</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="discussion-timer" id="discussionTimer" style="display: none;">
+                        <div class="timer-display">
+                            <span class="timer-icon">⏱️</span>
+                            <span class="timer-text">小组讨论时间</span>
+                            <span class="timer-countdown" id="timerCountdown">01:30</span>
+                        </div>
+                        <p class="timer-hint">请结合双方观点，讨论：1. 谁的主张更有道理？ 2. 法律会支持哪一方？</p>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="section-nav">
+                <a href="section2.html" class="nav-prev">← 返回环节二</a>
+                <a href="index.html" class="nav-next">返回首页 →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>劳动法课程教学资源 | 仅供教学使用</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

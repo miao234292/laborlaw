@@ -576,11 +576,12 @@ body {
 }
 
 /* ===== 找茬游戏样式 ===== */
-.game-header {
+.game-header,
+.game-status-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     margin: -2rem -2rem 1.5rem;
     padding: 1rem 2rem;
     color: white;
@@ -826,7 +827,7 @@ body {
     line-height: 1.6;
 }
 
-.restart-btn, .close-game-btn {
+.restart-btn, .close-game-btn, .close-modal-btn {
     padding: 0.875rem 2rem;
     border: none;
     border-radius: var(--radius-md);
@@ -845,13 +846,24 @@ body {
     background: var(--primary-dark);
 }
 
-.close-game-btn {
+.close-game-btn,
+.close-modal-btn {
     background: var(--bg-tertiary);
     color: var(--text-secondary);
 }
 
-.close-game-btn:hover {
+.close-game-btn:hover,
+.close-modal-btn:hover {
     background: var(--border-color);
+}
+
+.game-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
 }
 
 /* ===== 连连看配对游戏样式 ===== */
@@ -1211,11 +1223,13 @@ body {
     font-weight: 600;
 }
 
-.job-detail-section {
+.job-detail-section,
+.job-section {
     margin-bottom: 1.5rem;
 }
 
-.job-detail-section h4 {
+.job-detail-section h4,
+.job-section h4 {
     font-size: 1rem;
     color: var(--primary-color);
     margin-bottom: 0.75rem;
@@ -1224,23 +1238,91 @@ body {
     gap: 0.5rem;
 }
 
-.job-detail-section ul {
+.job-detail-section ul,
+.job-list {
     list-style: none;
     padding-left: 0;
 }
 
-.job-detail-section li {
-    padding: 0.4rem 0;
-    padding-left: 1.25rem;
-    position: relative;
+.job-detail-section li,
+.job-item {
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: var(--radius-md);
+    background: var(--bg-secondary);
     color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    border: 2px solid transparent;
+    position: relative;
 }
 
-.job-detail-section li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--primary-color);
+.job-item:hover {
+    background: var(--primary-light);
+    border-color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.job-item.risky {
+    background: var(--danger-light);
+    border-color: var(--danger-color);
+}
+
+.job-item.risky:hover {
+    background: var(--danger-color);
+    color: white;
+}
+
+.job-item.good {
+    background: var(--success-light);
+    border-color: var(--success-color);
+}
+
+.job-item.good:hover {
+    background: var(--success-color);
+    color: white;
+}
+
+.job-item.found-risk {
+    background: var(--success-color);
+    color: white;
+    border-color: var(--success-color);
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+/* 游戏开始前条款不可点击 */
+.job-item:not(.clickable) {
+    cursor: default;
+}
+
+.job-item:not(.clickable):hover {
+    background: var(--bg-secondary);
+    border-color: transparent;
+    transform: none;
+}
+
+/* 游戏开始后条款可点击 */
+.job-item.clickable {
+    cursor: pointer;
+}
+
+.job-item.clickable:hover {
+    background: var(--primary-light);
+    border-color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.job-item.clickable.risky-found {
+    background: var(--danger-color);
+    color: white;
+    border-color: var(--danger-color);
+}
+
+.job-item.clickable.good-found {
+    background: var(--success-color);
+    color: white;
+    border-color: var(--success-color);
 }
 
 .job-detail-section .warning {
@@ -1392,6 +1474,72 @@ body {
     margin-bottom: 2rem;
 }
 
+/* 活动说明 */
+.activity-instruction {
+    background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.activity-instruction p {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* 讨论计时器 */
+.discussion-timer {
+    background: white;
+    border-radius: var(--radius-xl);
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--primary-light);
+    animation: fadeIn 0.5s ease;
+}
+
+.timer-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 1rem;
+}
+
+.timer-icon {
+    font-size: 1.5rem;
+}
+
+.timer-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.timer-countdown {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-md);
+    min-width: 80px;
+    text-align: center;
+}
+
+.timer-hint {
+    text-align: center;
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
 .role-card {
     background: white;
     border-radius: var(--radius-xl);
@@ -1420,15 +1568,15 @@ body {
 }
 
 .worker-role {
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    background: linear-gradient(135deg, #a8d8ea, #8fc1d4);
 }
 
 .company-role {
-    background: linear-gradient(135deg, #ef4444, #dc2626);
+    background: linear-gradient(135deg, #ffb6b9, #ff9aa2);
 }
 
 .mediator-role {
-    background: linear-gradient(135deg, #10b981, #059669);
+    background: linear-gradient(135deg, #b8e0d2, #9dd3c0);
 }
 
 .role-icon {
@@ -1450,8 +1598,57 @@ body {
     font-style: italic;
 }
 
-.role-details {
+.role-details,
+.role-points {
     animation: fadeIn 0.4s ease;
+}
+
+.role-points {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.role-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+}
+
+.role-point .point-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.role-point p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+.worker-role + .role-content .role-point .point-number {
+    background: #a8d8ea;
+}
+
+.company-role + .role-content .role-point .point-number {
+    background: #ffb6b9;
+}
+
+.mediator-role + .role-content .role-point .point-number {
+    background: #b8e0d2;
 }
 
 .role-details h5 {
@@ -1481,15 +1678,15 @@ body {
 }
 
 .worker-role + .role-content .role-details li::before {
-    color: #3b82f6;
+    color: #a8d8ea;
 }
 
 .company-role + .role-content .role-details li::before {
-    color: #ef4444;
+    color: #ffb6b9;
 }
 
 .mediator-role + .role-content .role-details li::before {
-    color: #10b981;
+    color: #b8e0d2;
 }
 
 .mediation-summary {
@@ -1599,6 +1796,102 @@ body {
     font-weight: 700;
     color: #d4a5a5;
     margin-bottom: 0;
+}
+
+/* ===== Home Page Section Navigation ===== */
+.sections-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.section-nav-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    text-decoration: none;
+    color: var(--text-primary);
+    min-width: 200px;
+    max-width: 280px;
+    transition: var(--transition-normal);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-nav-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.section-nav-card:nth-child(2)::before {
+    background: linear-gradient(90deg, var(--secondary-color), var(--warning-color));
+}
+
+.section-nav-card:nth-child(3)::before {
+    background: linear-gradient(90deg, var(--warning-color), var(--success-color));
+}
+
+.section-nav-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-light);
+}
+
+.section-nav-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.section-nav-card:nth-child(2) .section-nav-badge {
+    background: linear-gradient(135deg, var(--secondary-color), #ff9aa2);
+}
+
+.section-nav-card:nth-child(3) .section-nav-badge {
+    background: linear-gradient(135deg, var(--warning-color), #ffc4a3);
+}
+
+.section-nav-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.section-nav-card p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.section-nav-arrow {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    transition: var(--transition-normal);
+}
+
+.section-nav-card:hover .section-nav-arrow {
+    transform: translateX(5px);
 }
 
 /* ===== Footer ===== */
